@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shopping List</title>
+        <!-- use bootstrap styling-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <style>
+
+            li {
+                background-color:grey;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Shopping List</h1>
+
+        <ul id="items" class="list-group">
+        </ul>
+
+        <input placeholder="New Item">
+        <button id="add">Add</button>
+        <br>
+        <button id="reset">Clear</button>
+        <script>
+
+            document.querySelector('#add').onclick = function() {
+                let item = document.querySelector('input').value;
+				if(item.trim() =="")
+				   {alert("You cannot add an empty item to the list!")}
+				else {
+                document.querySelector('#items').innerHTML += '<li class="list-group-item">' + item + '</li>';
+                document.querySelector('input').value = '';
+                }
+			}
+
+			            document.querySelector('#reset').onclick = function() {
+                document.querySelector('#items').innerHTML = '';
+                document.querySelector('input').value = '';
+                }
+        </script>
+
+  </body>
+</html>
